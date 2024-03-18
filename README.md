@@ -88,9 +88,9 @@ output = subprocess.check_output(cmd, shell=True, text=True);
 
 Исправление: 
 ```python
-output = subprocess.check_output('nslookup ' + hostname, shell=True, text=True)
+output = subprocess.check_output(['nslookup ', hostname], text=True)
 ```
-– так как subprocess обрабатывает запрос как единую команду, нам не нужно волноваться о потенциальной OS инъекции если мы будем использовать внутреннюю функцию subprocess’а
+– так как subprocess обрабатывает запрос как единую команду, нам не нужно волноваться о потенциальной OS инъекции если мы будем использовать внутреннюю функцию subprocess’а, при этом не использую Shell.
 
 
 # <strong>Часть 3. Моделирование угроз</strong>
